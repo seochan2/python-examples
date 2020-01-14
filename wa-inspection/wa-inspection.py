@@ -1,7 +1,8 @@
 import requests
 
+
 def main():
-    URL = ""
+    url = ""
 
     session = requests.Session()
     headers = {
@@ -10,12 +11,16 @@ def main():
         "Connection": "Keep-Alive"
     }
     
-    bsObj = BeautifulSoup(session.get(URL, headers=headers).content, "html.parser")
+    bs_obj = BeautifulSoup(session.get(url, headers=headers).content, "html.parser")
     
-    a_tag_list = bsObj.find_all('a')
+    a_tag_list = bs_obj.find_all('a')
+    
+    file_name = "result.html"
+    f = open(file_name, 'w')
     
     for a_tag in a_tag_list:
-        print(a_tag)
+        data = ' '.join([str(a_tag), str('\n')])
     
+
 if __name__ == "__main__":
     main()

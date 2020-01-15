@@ -20,7 +20,15 @@ def main():
     
     for a_tag in a_tag_list:
         data = ' '.join([str(a_tag), str('\n')])
+        f.write(data)
     
+    f.write("----------")
+    
+    img_tag_list = bs_obj.find_all('img')
+    
+    for img_tag in img_tag_list:
+        data = ' '.join([str(img_tag), str('\n')])
+        f.write(data)
 
 if __name__ == "__main__":
     main()

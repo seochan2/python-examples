@@ -19,6 +19,7 @@ def main():
     f = open(file_name, 'w')
     
     for a_tag in a_tag_list:
+        print(a_tag.text)
         data = ' '.join([str(a_tag), str('\n')])
         f.write(data)
     
@@ -27,6 +28,7 @@ def main():
     img_tag_list = bs_obj.find_all('img')
     
     for img_tag in img_tag_list:
+        print(img_tag.text)
         data = ' '.join([str(img_tag), str('\n')])
         f.write(data)
 

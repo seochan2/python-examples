@@ -39,6 +39,13 @@ def main():
     data = ' '.join('div cnt ::', len(div_tag_list), str('\n')])
     f.write(data)
 
+    f.write("----------")
+    
+    lang_info = bs_obj.find('html').get('lang')
+    
+    data = ' '.join('lang ::', lang_info, str('\n')])
+    f.write(data)
+
 
 if __name__ == "__main__":
     main()
